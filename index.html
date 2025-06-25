@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSEStudyHub - Computer Science Engineering Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <script src="script.js"></script>
+    
+   
+</head>
+<body>
+    <!-- Professional Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <i class="fas fa-laptop-code logo-icon"></i>
+            <span class="logo-text">CSE<span>Study</span>Hub</span>
+        </a>
+        
+        <button class="hamburger" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Premium Slide-out Menu -->
+    <div class="menu-overlay"></div>
+    
+    <div class="slide-out-menu">
+        <div class="menu-header">
+            <h3 class="menu-title">
+                <i class="fas fa-laptop-code"></i>
+                CSE Resources
+            </h3>
+            <button class="close-menu" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="menu-content">
+            <!-- Core Subjects Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-book-open"></i> Core Subjects</h3>
+                <ul class="menu-list">
+                    <li>
+                        <a href="p1.html">
+                            <i class="fab fa-python"></i>
+                            Programming Languages
+                            <span class="badge">Popular</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-project-diagram"></i>
+                            Data Structures & Algorithms
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-database"></i>
+                            Database Systems
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-network-wired"></i>
+                            Computer Networks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-desktop"></i>
+                            Operating Systems
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Semester Materials Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-calendar-alt"></i> Semester Materials</h3>
+                <ul class="menu-list">
+                    <li><a href="#"><i class="fas fa-book"></i> 1st Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 2nd Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 3rd Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 4th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 5th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 6th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 7th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 8th Semester</a></li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-flask"></i>
+                            Lab Manuals
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-code"></i>
+                            Practical Files
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Specializations Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-graduation-cap"></i> Specializations</h3>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-brain"></i>
+                            AI/ML Resources
+                            <span class="badge">Trending</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-code"></i>
+                            Web Development
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            Cyber Security
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cloud"></i>
+                            Cloud Computing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-microchip"></i>
+                            IoT Materials
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Exam Preparation Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-clipboard-list"></i> Exam Preparation</h3>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            University Question Papers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-star"></i>
+                            Important Questions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-tie"></i>
+                            Interview Preparation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-trophy"></i>
+                            Competitive Programming
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Student Account Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-user-circle"></i> Student Account</h3>
+                <ul class="menu-list">
+                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="#"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li><a href="#"><i class="fas fa-bookmark"></i> Bookmarked Materials</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> Download History</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Profile Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-footer">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    
+  <div class="slider-wrapper">
+    <div class="slider" id="courseSlider">
+      <a href="#python">Python</a>
+      <a href="#java">Java</a>
+      <a href="#c">C</a>
+      <a href="#cpp">C++</a>
+      <a href="#web">Web Dev</a>
+      <a href="#android">Android</a>
+      <a href="#ai">AI</a>
+      <a href="#ds">DSA</a>
+      <a href="#networking">Networking</a>
+      <a href="#dbms">DBMS</a>
+      <a href="#os">OS</a>
+      <a href="#cloud">Cloud</a>
+      <a href="#iot">IoT</a>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+  </div>
+
+  <!-- Enhanced Course Section -->
+  <section class="courses-section">
+    <div class="section-header">
+        <h2>Computer Science & Engineering Courses</h2>
+        <p>Comprehensive learning paths designed by industry experts to help you master computer science concepts</p>
+    </div>
+    <!-- Header with Logo, Search Bar, and Notification -->
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem 1rem;">
+<h1 style="font-size: 2rem; font-weight: 700;">
+    
+</h1>
+<div style="position: relative;">
+    <i class="fas fa-bell" style="font-size: 1.4rem; color: var(--primary); cursor: pointer;"></i>
+    <span id="notifyBadge" style="position: absolute; top: -8px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem; display: none;">1</span>
+</div>
+</div>
+
+<!-- Search Input -->
+<div style="text-align: center; margin-bottom: 1rem;">
+<input type="text" id="searchInput" placeholder="Search for courses..." 
+    style="padding: 0.9rem 1.5rem; width: 90%; max-width: 500px; border-radius: 50px; border: 1px solid #ccc; font-size: 1rem;">
+</div>
+
+    <div class="course-grid">
+        <!-- Card 1 (Right Animation) -->
+        <article class="course-card" data-animation="right">
+            <div class="card-icon">
+                <i class="fab fa-python"></i>
+            </div>
+            <div class="card-content">
+                <h3>Python Programming</h3>
+                <p>Master Python from fundamentals to advanced concepts including OOP, data structures, and popular frameworks like Django and Flask.</p>
+                <div class="card-meta">
+                    <span class="badge beginner">Beginner</span>
+                    <span>• 24 Lectures (8 Hours)</span>
+                </div>
+                <button class="cta-button"><a href="p1.html">View Course Details</a></button>
+            </div>
+        </article>
+
+        <!-- Card 2 (Left Animation) -->
+        <article class="course-card" data-animation="left">
+            <div class="card-icon">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="card-content">
+                <h3>Data Structures & Algorithms</h3>
+                <p>Essential computer science concepts with implementations in Python, Java, and C++. Includes LeetCode-style problem solving.</p>
+                <div class="card-meta">
+                    <span class="badge advanced">Advanced</span>
+                    <span>• 36 Lectures (12 Hours)</span>
+                </div>
+                <button class="cta-button">View Course Details</button>
+            </div>
+        </article>
+
+        <!-- Card 3 (Up Animation) -->
+        <article class="course-card" data-animation="up">
+            <div class="card-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <div class="card-content">
+                <h3>Database Systems</h3>
+                <p>Learn SQL, NoSQL, and database design principles. Covers MySQL, PostgreSQL, MongoDB and Redis with real-world projects.</p>
+                <div class="card-meta">
+                    <span class="badge beginner">Beginner</span>
+                    <span>• 18 Lectures (6 Hours)</span>
+                </div>
+                <button class="cta-button">View Course Details</button>
+            </div>
+        </article>
+
+        <!-- Card 4 (Right Animation) -->
+        <article class="course-card" data-animation="right">
+            <div class="card-icon">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="card-content">
+                <h3>Computer Networks</h3>
+                <p>Understand networking protocols, architectures, and security fundamentals. Includes Wireshark labs and packet analysis.</p>
+                <div class="card-meta">
+                    <span class="badge advanced">Advanced</span>
+                    <span>• 22 Lectures (7.5 Hours)</span>
+                </div>
+                <button class="cta-button">View Course Details</button>
+            </div>
+        </article>
+
+        <!-- Card 5 (Left Animation) -->
+        <article class="course-card" data-animation="left">
+            <div class="card-icon">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <div class="card-content">
+                <h3>Operating Systems</h3>
+                <p>Deep dive into processes, memory management, file systems, and virtualization. Includes Linux kernel programming exercises.</p>
+                <div class="card-meta">
+                    <span class="badge advanced">Advanced</span>
+                    <span>• 30 Lectures (10 Hours)</span>
+                </div>
+                <button class="cta-button">View Course Details</button>
+            </div>
+        </article>
+
+        <!-- Card 6 (Up Animation) -->
+        <article class="course-card" data-animation="up">
+            <div class="card-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="card-content">
+                <h3>Artificial Intelligence</h3>
+                <p>Introduction to machine learning, neural networks, and AI applications using Python with TensorFlow and PyTorch.</p>
+                <div class="card-meta">
+                    <span class="badge advanced">Advanced</span>
+                    <span>• 28 Lectures (9 Hours)</span>
+                </div>
+                <button class="cta-button">View Course Details</button>
+            </div>
+        </article>
+    </div>
+</section>
+
+
+<section class="testimonial-section">
+    <h2 class="testimonial-title">Student Testimonials</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Ravi" class="profile-img">
+            <h3>Ravi Kumar</h3>
+            <p class="branch">CSE - 2nd Year</p>
+            <p>"The notes helped me score better in exams. Very useful site!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sneha" class="profile-img">
+            <h3>Sneha Roy</h3>
+            <p class="branch">IT - Final Year</p>
+            <p>"Easy to understand and well-organized content. Loved the design."</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+            <h3>Amit Patel</h3>
+            <p class="branch">ECE - 3rd Year</p>
+            <p>"Amazing content! I visit this site regularly for updated notes."</p>
+            <div class="stars">⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+              <h3>Amit Patel</h3>
+              <p class="branch">ECE - 3rd Year</p>
+              <p>"Amazing content! I visit this site regularly for updated notes."</p>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+              <h3>Amit Patel</h3>
+              <p class="branch">ECE - 3rd Year</p>
+              <p>"Amazing content! I visit this site regularly for updated notes."</p>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+              <h3>Amit Patel</h3>
+              <p class="branch">ECE - 3rd Year</p>
+              <p>"Amazing content! I visit this site regularly for updated notes."</p>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+              <h3>Amit Patel</h3>
+              <p class="branch">ECE - 3rd Year</p>
+              <p>"Amazing content! I visit this site regularly for updated notes."</p>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+              <h3>Amit Patel</h3>
+              <p class="branch">ECE - 3rd Year</p>
+              <p>"Amazing content! I visit this site regularly for updated notes."</p>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit" class="profile-img">
+              <h3>Amit Patel</h3>
+              <p class="branch">ECE - 3rd Year</p>
+              <p>"Amazing content! I visit this site regularly for updated notes."</p>
+              <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+
+
+  
+  <div class="main-container">
+    <div class="recent-container">
+
+      <!-- Recent in Python -->
+      <div class="section recent-python" data-aos="fade-up">
+        <h2>RECENT IN PYTHON</h2>
+        <hr color = "F97A00">
+        <div class="post">
+          <img src="https://i.postimg.cc/j245YcLZ/a-digital-illustration-of-a-circular-log-4l-DDiigj-SD2y7ah-QD1-Zx-g-i-FKv-U1-Gv-Tx-Ch-UXq-F3hzq1-Q.jpg" alt="Python Post">
+          <div>
+            <strong><a href="#">Learn Python Loops</a></strong>
+            <p><i class="fa-regular fa-calendar"></i> May 20, 2025</p>
+          </div>
+        </div>
+        <div class="post">
+          <img src="https://via.placeholder.com/60" alt="Python Post">
+          <div>
+            <strong><a href="#">Functions Explained</a></strong>
+            <p><i class="fa-regular fa-calendar"></i> May 18, 2025</p>
+          </div>
+        </div>
+        <div class="post">
+          <img src="https://via.placeholder.com/60" alt="Python Post">
+          <div>
+            <strong><a href="#">Python File Handling</a></strong>
+            <p><i class="fa-regular fa-calendar"></i> May 15, 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Posts -->
+      <div class="section recent-posts" data-aos="fade-up">
+        <h2><span class="line"></span>RECENT POSTS</h2>
+        <hr color = "F97A00">
+        <div class="post">
+          <img src="https://via.placeholder.com/60" alt="Recent Post">
+          <div>
+            <strong><a href="#">Top 10 Java Tips</a></strong>
+            <p><i class="fa-regular fa-calendar"></i> May 22, 2025</p>
+          </div>
+        </div>
+        <div class="post">
+          <img src="https://via.placeholder.com/60" alt="Recent Post">
+          <div>
+            <strong><a href="#">Mastering HTML5</a></strong>
+            <p><i class="fa-regular fa-calendar"></i> May 19, 2025</p>
+          </div>
+        </div>
+        <div class="post">
+          <img src="https://via.placeholder.com/60" alt="Recent Post">
+          <div>
+            <strong><a href="#">Responsive CSS Guide</a></strong>
+            <p><i class="fa-regular fa-calendar"></i> May 17, 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="section tags" data-aos="fade-up">
+        <h2>TAGS</h2>
+        <hr color = "F97A00">
+        <br>
+        <div class="tag-buttons">
+          <span class="tag"><i class="fa-solid fa-code"></i> Python</span>
+          <span class="tag"><i class="fa-brands fa-java"></i> Java</span>
+          <span class="tag"><i class="fa-brands fa-html5"></i> HTML</span>
+          <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          <span class="tag"><i class="fa-solid fa-database"></i> DSA</span>
+          <span class="tag"><i class="fa-brands fa-react"></i> React</span>
+          <span class="tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-line"></div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <p>Crafted with ❤️ by TemplatesYard | Distributed by ❤️ DiplomaWale</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </footer>
+  </div>
+  
+
+  <div class="contact-icons">
+    <a href="https://wa.me/8210917242" class="whatsapp" target="_blank" title="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://t.me/+8gA4_bS67qs0MTk1" class="telegram" target="_blank" title="Join on Telegram">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+  </div>
+
+
+
+
+
+
+</body>
+</html>
