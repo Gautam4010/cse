@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylish Login/Register</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ececec, #f5f5f5);
+    }
+
+    .auth-container {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .tabs button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      color: #444;
+      transition: color 0.3s;
+    }
+
+    .tabs button.active {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .tabs button.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background-color: #000;
+      border-radius: 5px;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #888;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .password-field {
+      position: relative;
+    }
+
+    .password-field i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #777;
+    }
+
+    button[type="submit"] {
+      background-color: #333;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #000;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 10px 0;
+      position: relative;
+      color: #666;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      height: 1px;
+      background: #ccc;
+      position: absolute;
+      top: 50%;
+      width: 40%;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .divider span {
+      background: rgba(255,255,255,0.7);
+      padding: 0 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-buttons button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
+
+    .social-buttons button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .social-buttons .fa-google {
+      color: #DB4437;
+    }
+
+    .social-buttons .fa-github {
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .auth-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container" role="main">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="login">Login</button>
+      <button class="tab-btn" data-tab="register">Register</button>
+    </div>
+
+    <form id="login" class="active" aria-label="Login Form">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" required aria-required="true" />
+
+      <label for="login-password">Password</label>
+      <div class="password-field">
+        <input type="password" id="login-password" required />
+        <i class="fa fa-eye toggle-password" data-target="login-password"></i>
+      </div>
+
+      <button type="submit">Login</button>
+
+      <div class="divider"><span>or</span></div>
+      <div class="social-buttons">
+        <button><i class="fab fa-google"></i> Google</button>
+        <button><i class="fab fa-github"></i> GitHub</button>
+      </div>
+    </form>
+
+    <form id="register" aria-label="Register Form">
+      <label for="register-email">Email</label>
+      <input type="email" id="register-email" required />
+
+      <label for="register-password">Password</label>
+      <div class="password-field">
+        <input type="password" id="register-password" required />
+        <i class="fa fa-eye toggle-password" data-target="register-password"></i>
+      </div>
+
+      <label for="confirm-password">Confirm Password</label>
+      <div class="password-field">
+        <input type="password" id="confirm-password" required />
+        <i class="fa fa-eye toggle-password" data-target="confirm-password"></i>
+      </div>
+
+      <button type="submit">Register</button>
+
+      <div class="divider"><span>or</span></div>
+      <div class="social-buttons">
+        <button><i class="fab fa-google"></i> Google</button>
+        <button><i class="fab fa-github"></i> GitHub</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const forms = document.querySelectorAll("form");
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach(b => b.classList.remove("active"));
+        forms.forEach(f => f.classList.remove("active"));
+
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    document.querySelectorAll(".toggle-password").forEach(icon => {
+      icon.addEventListener("click", () => {
+        const input = document.getElementById(icon.dataset.target);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        } else {
+          input.type = "password";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
