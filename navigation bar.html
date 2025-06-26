@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSEStudyHub - Computer Science Engineering Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --primary: #1a237e;
+            --primary-light: #534bae;
+            --primary-dark: #000051;
+            --accent: #4fc3f7;
+            --accent-dark: #0093c4;
+            --text-light: #ffffff;
+            --text-dark: #2d3748;
+            --bg-light: #f8fafc;
+            --gray-light: #e2e8f0;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --menu-width: 400px;
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+                         Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Professional Navigation Bar */
+        .navbar {
+            background-color: var(--primary);
+            color: var(--text-light);
+            height: 64px;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.75rem;
+            color: var(--accent);
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .hamburger:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .hamburger:active {
+            transform: scale(0.98);
+        }
+
+        /* Premium Slide-out Menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-out-menu {
+            position: fixed;
+            top: 0;
+            right: calc(-1 * var(--menu-width));
+            width: var(--menu-width);
+            height: 100%;
+            background-color: white;
+            z-index: 1000;
+            transition: right 0.3s ease-in-out;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-out-menu.active {
+            right: 0;
+        }
+
+        .menu-header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .menu-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .menu-title i {
+            color: var(--accent);
+        }
+
+        .close-menu {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .close-menu:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .menu-section {
+            margin-bottom: 2rem;
+            animation: fadeIn 0.4s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .menu-section:nth-child(1) { animation-delay: 0.1s; }
+        .menu-section:nth-child(2) { animation-delay: 0.2s; }
+        .menu-section:nth-child(3) { animation-delay: 0.3s; }
+        .menu-section:nth-child(4) { animation-delay: 0.4s; }
+        .menu-section:nth-child(5) { animation-delay: 0.5s; }
+
+        .menu-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .menu-list {
+            list-style: none;
+        }
+
+        .menu-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .menu-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .menu-list li:hover::before {
+            width: 100%;
+        }
+
+        .menu-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .menu-list a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .menu-list i {
+            margin-right: 1rem;
+            color: var(--primary);
+            width: 1.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .menu-list a:hover i {
+            color: var(--accent);
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-left: auto;
+            font-weight: 600;
+        }
+
+        .menu-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--gray-light);
+            background-color: #f9f9f9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.25rem;
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            color: var(--text-light);
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            :root {
+                --menu-width: 85%;
+            }
+            
+            .navbar {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --menu-width: 90%;
+            }
+            
+            .navbar {
+                padding: 0 1rem;
+            }
+            
+            .logo-icon {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <i class="fas fa-laptop-code logo-icon"></i>
+            <span class="logo-text">CSE<span>Study</span>Hub</span>
+        </a>
+        
+        <button class="hamburger" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Premium Slide-out Menu -->
+    <div class="menu-overlay"></div>
+    
+    <div class="slide-out-menu">
+        <div class="menu-header">
+            <h3 class="menu-title">
+                <i class="fas fa-laptop-code"></i>
+                CSE Resources
+            </h3>
+            <button class="close-menu" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="menu-content">
+            <!-- Core Subjects Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-book-open"></i> Core Subjects</h3>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-python"></i>
+                            Programming Languages
+                            <span class="badge">Popular</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-project-diagram"></i>
+                            Data Structures & Algorithms
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-database"></i>
+                            Database Systems
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-network-wired"></i>
+                            Computer Networks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-desktop"></i>
+                            Operating Systems
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Semester Materials Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-calendar-alt"></i> Semester Materials</h3>
+                <ul class="menu-list">
+                    <li><a href="#"><i class="fas fa-book"></i> 1st Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 2nd Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 3rd Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 4th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 5th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 6th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 7th Semester</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> 8th Semester</a></li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-flask"></i>
+                            Lab Manuals
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-code"></i>
+                            Practical Files
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Specializations Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-graduation-cap"></i> Specializations</h3>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-brain"></i>
+                            AI/ML Resources
+                            <span class="badge">Trending</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-code"></i>
+                            Web Development
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i>
+                            Cyber Security
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cloud"></i>
+                            Cloud Computing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-microchip"></i>
+                            IoT Materials
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Exam Preparation Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-clipboard-list"></i> Exam Preparation</h3>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            University Question Papers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-star"></i>
+                            Important Questions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-tie"></i>
+                            Interview Preparation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-trophy"></i>
+                            Competitive Programming
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Student Account Section -->
+            <div class="menu-section">
+                <h3><i class="fas fa-user-circle"></i> Student Account</h3>
+                <ul class="menu-list">
+                    <li><a href="#"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="#"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li><a href="#"><i class="fas fa-bookmark"></i> Bookmarked Materials</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> Download History</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Profile Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-footer">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (for demonstration) -->
+    <main style="padding: 2rem; min-height: 200vh;">
+        <h1 style="margin-bottom: 1.5rem;">Welcome to CSEStudyHub</h1>
+        <p style="margin-bottom: 2rem;">Your complete Computer Science Engineering study resource</p>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Toggle Functionality
+            const hamburger = document.querySelector('.hamburger');
+            const closeMenu = document.querySelector('.close-menu');
+            const slideOutMenu = document.querySelector('.slide-out-menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            
+            function toggleMenu() {
+                slideOutMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = slideOutMenu.classList.contains('active') ? 'hidden' : '';
+            }
+            
+            // Event Listeners
+            hamburger.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking on menu items
+            const menuItems = document.querySelectorAll('.menu-list a');
+            menuItems.forEach(item => {
+                item.addEventListener('click', toggleMenu);
+            });
+            
+            // Keyboard Accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && slideOutMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+            
+            // Add animation classes when menu opens
+            const menuSections = document.querySelectorAll('.menu-section');
+            
+            hamburger.addEventListener('click', function() {
+                menuSections.forEach((section, index) => {
+                    section.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
