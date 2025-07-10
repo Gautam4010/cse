@@ -165,11 +165,22 @@ body {
   font-size: 20px;
 }
 
-.wellcome #welcome1 h1 {
+.wellcome #welcome1 h1{
   text-shadow: 2px 6px 5px gray;
   color:black;
   text-align: center;
+  border:1px solid black;
+  box-shadow: 2px 6px 5px gray;
+  height:70px;
+  padding-top:20px;
+  transition: transform 8s;
+  background-color: antiquewhite;
 }
+
+.wellcome #welcome1 h1:hover {
+  transform:scale(0.8,0.8);
+}
+
 
 .wellcome #welcome1 h2 {
   color:grey;
@@ -186,6 +197,14 @@ body {
   text-shadow: 2px 6px 5px gray;
 }
 
+.seg img{
+  transition:transform 1s;
+}
+
+.seg img:hover{
+  transform: translate(0,10px);
+}
+
 .segment {
   height: 700px;
   width: 1348px;
@@ -196,6 +215,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+
  
 }
 
@@ -210,7 +230,9 @@ body {
   padding:10px ;
   text-align: justify;
 
+
 }
+
 
 
 .segment #s div  h3{
@@ -231,6 +253,14 @@ body {
   text-align: center;
 }
 
+.test-up img{
+  transition:transform 1s;
+}
+
+.test-up img:hover{
+  transform: translate(0,10px);
+}
+
 .test-up h1{
   
   text-shadow: 2px 6px 5px gray;
@@ -245,6 +275,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 
 
 .testing #testing1{
@@ -431,7 +462,7 @@ body {
 
 .venus-up{
   text-align: center;
-  background-color: #f1e7e7;
+  background: linear-gradient(to bottom,white,#FDFFB8); 
   height: 100px;
   width:1288px;
   padding:30px;
@@ -464,7 +495,7 @@ body {
 
 
 .venus-up ul li a:hover{
-      background-color: #f1e7e7;
+      background-color:  #FDFFB8;
       color:rgb(83, 8, 8);
       border:solid 1px rgb(83, 8, 8);
 }
@@ -476,7 +507,7 @@ body {
 
 
 .venus {
-  background-color:#f1e7e7;
+  background-color: #FDFFB8;
   height: 500px;
   width: 1348px;
   display: flex;
@@ -492,13 +523,21 @@ body {
 
 
 .eve{
-  background-color:#e1eebc;
+  background: linear-gradient(to bottom,#FDFFB8,#e1eebc); 
   height: 60px;
   width: 1348px;
   float: left;
   justify-content: center;
   text-align: center;
  
+}
+
+.eve img{
+  transition:transform 1s;
+}
+
+.eve img:hover{
+  transform: translate(0,10px);
 }
 
 .eve h1{
@@ -522,14 +561,14 @@ body {
   height: 400px;
   width: 400px;
   margin:10px;
-  border-radius:10px;
+  border-bottom-right-radius:50px;
 }
 
 
 .event #event2{
-  background-color:pink;
   height: 400px;
   width: 600px;
+  
 }
 
 .event #event1 ul li {
@@ -550,6 +589,7 @@ body {
 .event #event2 img{
   width:100%;
   height:100%;
+  border-top-left-radius:50px;
 }
 
 
@@ -560,6 +600,14 @@ body {
   float: left;
   text-align: center;
   text-shadow: 2px 6px 5px gray;
+}
+
+.service-up img{
+  transition:transform 1s;
+}
+
+.service-up img:hover{
+  transform: translate(0,10px);
 }
 
 .service {
@@ -640,9 +688,9 @@ body {
 #footer-area{
   width:1348px;
   height:420px;
-  background:pink;
+  background:black;
   display: flex;
-  background-image: url("https://t4.ftcdn.net/jpg/02/50/95/91/240_F_250959105_KFS05K9HHels3cK6nZcID63s1sEjciGn.jpg");
+  /* background-image: url("https://t4.ftcdn.net/jpg/02/50/95/91/240_F_250959105_KFS05K9HHels3cK6nZcID63s1sEjciGn.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -696,7 +744,19 @@ body {
 #footer-area h2 {
   color:#ddb334;
 }
- 
+
+.copyright{
+  height:50px;
+  width:1348px;
+  background-color:rgb(48, 45, 45);
+}
+
+.copyright h3{
+  margin-top:0;
+  text-align:center;
+  padding-top:15px;
+  color:white;
+}
 
 
 
